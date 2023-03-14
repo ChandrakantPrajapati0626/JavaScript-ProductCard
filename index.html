@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript💥</title>
+    <style>
+        .main-card-container {
+            width: 360px;
+            background-color: #eed8d8;
+            display: block;
+            margin: 30px auto;
+            border-radius: 20px;
+            border: 1px solid rgb(194, 191, 191);
+        }
+
+        .biryani-img {
+            display: block;
+            width: 270px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 3px 2px grey;
+        }
+
+        .Card-container-title {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .cart-button {
+            width: 80%;
+            font-size: 15px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            display: block;
+            margin: 15px auto;
+            color: rgb(10, 9, 9);
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            background-color: rgb(25, 22, 22);
+            color: white;
+        }
+
+        .cart-button:hover {
+            box-shadow: 0 2px 6px rgb(82, 77, 77);
+        }
+
+        .quantity-contaainer {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .quantity-btn {
+            border-radius: 50%;
+            height: 28px;
+            width: 28px;
+            border: none;
+            background-color: rgb(249, 99, 73);
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-card-container">
+        <img src="biryani.jpg" alt="" class="biryani-img">
+
+        <h2 class="Card-container-title">Chicken Biryani</h2>
+
+        <div class="quantity-contaainer">
+            <button class="quantity-btn" onclick="inc()">+</button>
+            <span id="product-quantity">0</span>
+            <button class="quantity-btn" onclick="dec()">-</button>
+        </div>
+
+        <button class="cart-button">ADD TO CART</button>
+
+    </div>
+    <script type="text/javascript">
+        function inc() {
+            const qntElement = document.getElementById("product-quantity");
+            const quantity = parseInt(qntElement.innerHTML);
+            qntElement.innerHTML = quantity + 1;
+        }
+
+        function dec() {
+            const qntElement = document.getElementById("product-quantity");
+            const quantity = parseInt(qntElement.innerHTML);
+            if (quantity==0) {
+                alert("Minimum quantity")
+            }
+            else {
+                qntElement.innerHTML = quantity - 1;
+
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
